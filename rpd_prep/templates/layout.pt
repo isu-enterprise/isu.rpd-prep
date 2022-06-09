@@ -4,7 +4,12 @@
   xmlns:tal="http://xml.zope.org/namespaces/tal"
   xmlns:metal="http://xml.zope.org/namespaces/metal"
   xmlns:i18n="http://xml.zope.org/namespaces/i18n"
-  lang="${request.locale_name}">
+  lang="${request.locale_name}"
+  prefix="rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns# rdfs: http://www.w3.org/2000/01/rdf-schema# owl: http://www.w3.org/2002/07/owl# xsd: http://www.w3.org/2001/XMLSchema# rdfa: http://www.w3.org/ns/rdfa# dcterms: http://purl.org/dc/terms/ dctypes: http://purl.org/dc/dcmitype/ foaf: http://xmlns.com/foaf/0.1/ pimspace: http://www.w3.org/ns/pim/space# skos: http://www.w3.org/2004/02/skos/core# prov: http://www.w3.org/ns/prov# mem: http://mementoweb.org/ns# qb: http://purl.org/linked-data/cube# schema: http://schema.org/ void: http://rdfs.org/ns/void# rsa: http://www.w3.org/ns/auth/rsa# cert: http://www.w3.org/ns/auth/cert# wgs: http://www.w3.org/2003/01/geo/wgs84_pos# bibo: http://purl.org/ontology/bibo/ sioc: http://rdfs.org/sioc/ns# doap: http://usefulinc.com/ns/doap# dbr: http://dbpedia.org/resource/ dbp: http://dbpedia.org/property/ sio: http://semanticscience.org/resource/ opmw: http://www.opmw.org/ontology/ deo: http://purl.org/spar/deo/ doco: http://purl.org/spar/doco/ cito: http://purl.org/spar/cito/ fabio: http://purl.org/spar/fabio/ oa: http://www.w3.org/ns/oa# as: https://www.w3.org/ns/activitystreams# ldp: http://www.w3.org/ns/ldp# solid: http://www.w3.org/ns/solid/terms# acl: http://www.w3.org/ns/auth/acl# odrl: http://www.w3.org/ns/odrl/2/ dio: https://w3id.org/dio# rel: https://www.w3.org/ns/iana/link-relations/relation# wpdb: http://irnok.net/ontologies/database/isu/workprog# wpdd: http://irnok.net/ontologies/isu/workprog# idb: http://irnok.net/ontologies/database/isu/studplan# idd: http://irnok.net/ontologies/isu/studplan# schema: https://schema.org/ cnt: http://www.w3.org/2011/content#"
+  vocab="http://irnok.net/ontologies/database/isu/workprog#"
+  about="newSyllabus"
+  tal:attributes="about context.about|default"
+  typeof="dbr:Syllabus">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,7 +38,8 @@
             crossorigin="anonymous"></script> -->
     <!-- Custom styles for this scaffold -->
     <script src="https://cdn.jsdelivr.net/npm/handlebars@latest/dist/handlebars.js"></script>
-
+    <script src="${request.static_url('rpd_prep:static/editor.js')}"
+            lang="javascript"></script>
     <link href="${request.static_url('rpd_prep:static/theme.css')}" rel="stylesheet">
 
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -47,14 +53,17 @@
     <![endif]-->
   </head>
 
-  <body>
-
+  <body properly="schema:hasPart"
+        typeof="wpdd:Syllabus"
+        about="newSyllabus"
+        tal:attributes="about view.syll.identifier|default"
+        >
+    <div class="alert alert-primary" role="alert" id="alert-box">
+      Сообщений нет
+    </div>
     <div class="starter-template">
       <div class="container">
         <div class="row">
-          <div class="col-md-2">
-            <img class="logo img-responsive" src="${request.static_url('rpd_prep:static/pyramid.png')}" alt="pyramid web framework">
-          </div>
           <div class="col-md-10">
             <div metal:define-slot="content">No content</div>
           </div>
@@ -70,7 +79,7 @@
         </div>
         <div class="row">
           <div class="copyright">
-            Copyright &copy; Pylons Project
+            Copyright &copy; RPD Project
           </div>
         </div>
       </div>
