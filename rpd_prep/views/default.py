@@ -1,6 +1,7 @@
 from pyramid.view import view_config
 from pkg_resources import resource_stream
 from rdflib import Graph, RDF
+from rpd_prep.common import WPDD
 import os.path
 
 
@@ -16,7 +17,7 @@ class Context:
 
     @property
     def syll(self):
-        self.g.subjects(RDF.type, WPDD['Syllabus'])
+        return self.g.subjects(RDF.type, WPDD['Syllabus'])
 
 
 @view_config(route_name='home', renderer='rpd_prep:templates/mytemplate.pt')

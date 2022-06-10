@@ -1,6 +1,6 @@
-from common import *
+from . import *
 from rdflib import Literal, Namespace, Graph, URIRef
-from kg import *
+from .kg import *
 import os.path
 import types
 from pybars import Compiler
@@ -37,7 +37,7 @@ def uri(ent):
 
 COMPILER = Compiler()
 
-TEMPLATE = COMPILER.compile(open(TEMPLATE_NAME, "r").read())
+# TEMPLATE = COMPILER.compile(open(TEMPLATE_NAME, "r").read())
 
 G = Graph()
 NS = {}

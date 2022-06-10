@@ -1,6 +1,6 @@
 import os.path as op
 from rdflib import Graph, RDF, RDFS, Literal, FOAF, URIRef
-from common import *
+from . import *
 import logging
 
 logger = logging.getLogger(__name__)
