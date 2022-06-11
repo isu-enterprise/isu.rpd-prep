@@ -42,6 +42,8 @@
             lang="javascript"></script>
     <link href="${request.static_url('rpd_prep:static/theme.css')}" rel="stylesheet">
 
+    <!-- TODO: Load Editor.js and its plugins dokie.li? -->
+
     <!-- HTML5 shiv and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"

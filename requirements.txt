@@ -1,0 +1,9 @@
+lxml
+rdflib
+flask
+xlrd
+# -e git+https://github.com/eugeneai/pybars3@master#egg=pybars3
+pyRdfa3
+pyramid
+zope.component [zcml]
+-e . [testing]
