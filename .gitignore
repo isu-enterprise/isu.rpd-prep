@@ -20,3 +20,5 @@ Data*.fs*
 coverage
 test
 *.sqlite
+/modules
+.python-version

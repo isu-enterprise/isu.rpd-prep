@@ -70,7 +70,6 @@
             <div metal:define-slot="content">
             </div>
             <div metal:define-slot="test-zone">
-              <strong tal:content="syll.test">
             </div>
           </div>
         </div>

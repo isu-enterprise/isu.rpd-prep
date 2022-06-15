@@ -1,3 +1,6 @@
+
+from pyramid.events import subscriber, BeforeRender
+from pyramid.interfaces import IRendererFactory
 from pyramid.config import Configurator
 
 

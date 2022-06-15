@@ -3,6 +3,8 @@ rdflib
 flask
 xlrd
 # -e git+https://github.com/eugeneai/pybars3@master#egg=pybars3
+-e git+https://github.com/malthe/chameleon@master#egg=chameleon
+-e git+https://github.com/eugeneai/pyramid_chameleon#egg=pyramid_chameleon
 pyRdfa3
 pyramid
 zope.component [zcml]
